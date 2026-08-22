@@ -425,17 +425,21 @@ export default function Home() {
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
             <p>© {new Date().getFullYear()} MS PARK (Chattogram). All rights reserved.</p>
-            <p>
-              Official Brand Page:{" "}
-              <Link
-                href={STORE_INFO.facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-white underline underline-offset-4"
-              >
-                facebook.com/msparkbd
-              </Link>
-            </p>
+            <div className="flex items-center gap-3 text-[10px] text-zinc-600">
+              <p>
+                Official Brand Page:{" "}
+                <Link
+                  href={STORE_INFO.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-400 hover:text-white underline underline-offset-4"
+                >
+                  facebook.com/msparkbd
+                </Link>
+              </p>
+              <span>•</span>
+              <span className="opacity-40 hover:opacity-100 transition-opacity">Powered by Netlify</span>
+            </div>
           </div>
         </div>
       </footer>

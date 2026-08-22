@@ -61,13 +61,12 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/ms-pro.jpg" />
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-foreground selection:text-background pb-16 md:pb-0">
+      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-foreground selection:text-background">
         <IntroLoader />
         <CartProvider>
           <Navbar />
           <div className="flex-1">{children}</div>
           <CartDrawer />
-          <MobileBottomBar />
         </CartProvider>
       </body>
     </html>
