@@ -115,8 +115,10 @@ export function HeroCarousel() {
               src={currentSlide.image}
               alt={currentSlide.title}
               fill
+              sizes="100vw"
               className="object-cover object-center"
               priority
+              unoptimized
             />
             {/* Multi-layered Vignette & Dark Gradients for contrast */}
             <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/85 to-zinc-950/40 md:to-zinc-950/20" />

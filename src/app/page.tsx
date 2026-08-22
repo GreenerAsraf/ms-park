@@ -125,14 +125,18 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lg:col-span-6 relative min-h-[220px] lg:min-h-[360px] w-full">
-                <Image
-                  src="/ms-shop.jpg"
-                  alt="MS Park Showroom Interior"
-                  fill
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-zinc-950 via-transparent to-transparent" />
+              <div className="lg:col-span-6 relative w-full flex items-center justify-center p-4 lg:p-6 bg-zinc-950/80">
+                <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                  <Image
+                    src="/ms-shop.jpg"
+                    alt="MS Park Showroom Interior"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain bg-zinc-950"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl pointer-events-none" />
+                </div>
               </div>
             </div>
           </div>
@@ -286,17 +290,19 @@ export default function Home() {
             {/* Showroom Aesthetic Graphic / Actual Photo Visual */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl bg-card p-6 space-y-6">
-                <div className="relative aspect-video rounded-xl overflow-hidden bg-muted">
+                <div className="relative aspect-video rounded-xl overflow-hidden bg-zinc-900 border border-border/50">
                   <Image
                     src="/ms-shop.jpg"
                     alt="MS Park Yunusco City Centre Storefront"
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-center"
+                    unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4 sm:p-6 pointer-events-none">
                     <div className="text-white">
-                      <p className="text-xs font-semibold text-amber-400">YUNUSCO CITY CENTRE</p>
-                      <h4 className="text-xl font-bold">MS PARK • Shop 335 (3rd Floor)</h4>
+                      <p className="text-[10px] sm:text-xs font-bold text-amber-400 uppercase tracking-wider">YUNUSCO CITY CENTRE</p>
+                      <h4 className="text-base sm:text-xl font-black leading-tight">MS PARK • Shop 335 (3rd Floor)</h4>
                     </div>
                   </div>
                 </div>
