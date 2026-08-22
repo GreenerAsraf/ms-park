@@ -30,6 +30,11 @@ export const metadata: Metadata = {
     "Men Clothing Bangladesh",
     "msparkbd",
   ],
+  icons: {
+    icon: "/ms-pro.jpg",
+    shortcut: "/ms-pro.jpg",
+    apple: "/ms-pro.jpg",
+  },
   openGraph: {
     title: "MS PARK | Chattogram's Premier Menswear Destination",
     description:
@@ -51,6 +56,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
+      <head>
+        <link rel="icon" href="/ms-pro.jpg" type="image/jpeg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/ms-pro.jpg" />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-foreground selection:text-background pb-16 md:pb-0">
         <IntroLoader />
         <CartProvider>
