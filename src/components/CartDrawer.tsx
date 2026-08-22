@@ -183,9 +183,9 @@ export function CartDrawer() {
               <Button
                 onClick={handleWhatsAppCheckout}
                 size="lg"
-                className="w-full gap-2 font-bold bg-emerald-600 hover:bg-emerald-700 text-white"
+                className="w-full gap-2 font-bold bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-zinc-950 shadow-md shadow-amber-500/20"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4 fill-zinc-950" />
                 Order via WhatsApp Checkout
               </Button>
               <Link

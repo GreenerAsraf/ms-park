@@ -43,7 +43,7 @@ export function Navbar() {
             </span> */}
           </div>
 
-          <div className="flex items-center gap-4 text-zinc-400">
+          {/* <div className="flex items-center gap-4 text-zinc-400">
             <div className="flex items-center gap-1.5">
               <Truck className="w-3.5 h-3.5 text-emerald-400" />
               <span>Nationwide Delivery (Cash On Delivery)</span>
@@ -58,7 +58,7 @@ export function Navbar() {
               <WhatsAppIcon className="w-3 h-3" />
               <span>{STORE_INFO.phone}</span>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -16,7 +16,7 @@ const TILES = [...CATEGORIES, ...CATEGORIES, ...CATEGORIES, ...CATEGORIES];
 const CARD_W = 240; // px
 const CARD_GAP = 20; // px
 const STEP = CARD_W + CARD_GAP;
-const SPEED = 0.55; // px per frame — comfortable mid-speed
+const SPEED = 1.1; // px per frame — fast dynamic scroll
 
 export function CategoryMarquee({ onSelect }: CategoryMarqueeProps) {
   const x = useMotionValue(0);

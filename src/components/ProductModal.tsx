@@ -242,7 +242,7 @@ Delivery address / inquiry:`
               <Button
                 size="lg"
                 onClick={handleAddToCart}
-                className="w-full gap-2 font-bold shadow-lg shadow-primary/10"
+                className="w-full gap-2 font-bold bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-zinc-950 shadow-lg shadow-amber-500/20"
               >
                 <ShoppingBag className="w-4 h-4" />
                 Add to Cart • ৳{(product.price * quantity).toLocaleString()}
@@ -251,7 +251,7 @@ Delivery address / inquiry:`
                 size="lg"
                 variant="outline"
                 onClick={handleWhatsAppOrder}
-                className="w-full gap-2 border-emerald-600/50 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/30"
+                className="w-full gap-2 border-amber-400/50 text-amber-500 hover:bg-amber-500/10"
               >
                 <MessageCircle className="w-4 h-4" />
                 Order on WhatsApp

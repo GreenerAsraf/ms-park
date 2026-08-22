@@ -77,7 +77,7 @@ export function IntroLoader() {
                 x: [0, 40, 0],
               }}
               transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-              className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-blue-600/50 blur-[120px]"
+              className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-amber-500/50 blur-[120px]"
             />
             <motion.div
               animate={{
@@ -86,7 +86,7 @@ export function IntroLoader() {
                 x: [0, -50, 0],
               }}
               transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
-              className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-emerald-500/40 blur-[120px]"
+              className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-yellow-400/30 blur-[120px]"
             />
           </div>
 
@@ -108,11 +108,9 @@ export function IntroLoader() {
           >
             {/* Glowing Border Sweep Effect around the Oval */}
             <motion.div
-              animate={{
-                rotate: 360,
-              }}
+              animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-              className="absolute -inset-[200%] bg-[conic-gradient(from_0deg,transparent_0_300deg,rgba(59,130,246,0.5)_340deg,rgba(16,185,129,0.7)_360deg)] pointer-events-none opacity-60"
+              className="absolute -inset-[200%] bg-[conic-gradient(from_0deg,transparent_0_300deg,rgba(251,191,36,0.6)_340deg,rgba(245,158,11,0.9)_360deg)] pointer-events-none opacity-70"
             />
             <div className="absolute inset-[1px] rounded-[79px] sm:rounded-[99px] bg-zinc-950/95 pointer-events-none" />
 
@@ -125,7 +123,7 @@ export function IntroLoader() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative mb-5"
               >
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 bg-gradient-to-tr from-blue-500 via-indigo-400 to-emerald-400 shadow-xl shadow-blue-500/30">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 bg-gradient-to-tr from-yellow-400 via-amber-400 to-amber-600 shadow-xl shadow-amber-500/40">
                   <div className="relative w-full h-full rounded-full overflow-hidden bg-zinc-900 border-2 border-zinc-950">
                     <Image
                       src="/ms-pro.jpg"
@@ -141,7 +139,7 @@ export function IntroLoader() {
                 <motion.div
                   animate={{ scale: [1, 1.25, 1], opacity: [0.6, 0, 0.6] }}
                   transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-                  className="absolute -inset-2 rounded-full border border-emerald-400/50 pointer-events-none"
+                  className="absolute -inset-2 rounded-full border border-amber-400/60 pointer-events-none"
                 />
               </motion.div>
 
@@ -150,7 +148,7 @@ export function IntroLoader() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 }}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 text-[11px] font-semibold tracking-wider uppercase text-emerald-400 border border-white/15 backdrop-blur-md mb-4 shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/15 text-[11px] font-semibold tracking-wider uppercase text-amber-400 border border-amber-400/25 backdrop-blur-md mb-4 shadow-sm"
               >
                 <Sparkles className="w-3 h-3 text-amber-400" />
                 Original Garments • Chattogram
@@ -169,7 +167,7 @@ export function IntroLoader() {
                           variants={letterVariants}
                           initial="hidden"
                           animate="visible"
-                          className="inline-block text-4xl sm:text-6xl font-black uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-400 drop-shadow-md"
+                          className="inline-block text-4xl sm:text-6xl font-black uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 via-amber-400 to-amber-600 drop-shadow-md"
                         >
                           {char}
                         </motion.span>
@@ -184,7 +182,7 @@ export function IntroLoader() {
                 initial={{ width: 0, opacity: 0 }}
                 animate={{ width: "140px", opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.7 }}
-                className="h-1 rounded-full bg-gradient-to-r from-blue-500 via-indigo-400 to-emerald-400 my-2"
+                className="h-1 rounded-full bg-gradient-to-r from-yellow-400 via-amber-400 to-amber-600 my-2 shadow-sm shadow-amber-400/50"
               />
 
               {/* Showroom location text */}
@@ -206,14 +204,14 @@ export function IntroLoader() {
               >
                 <div className="w-full h-1.5 bg-zinc-800/90 rounded-full overflow-hidden border border-white/10 p-0.5">
                   <motion.div
-                    className="h-full bg-gradient-to-r from-blue-500 via-indigo-400 to-emerald-400 rounded-full"
+                    className="h-full bg-gradient-to-r from-yellow-400 via-amber-400 to-amber-500 rounded-full shadow-sm shadow-amber-400/40"
                     style={{ width: `${progress}%` }}
                     transition={{ ease: "easeOut" }}
                   />
                 </div>
                 <div className="flex justify-between text-[10px] text-zinc-500 font-mono">
                   <span>LOADING STORE</span>
-                  <span className="text-zinc-300 font-semibold">{progress}%</span>
+                  <span className="text-amber-400 font-semibold">{progress}%</span>
                 </div>
               </motion.div>
 
@@ -225,11 +223,11 @@ export function IntroLoader() {
                   delay: 0.85,
                   y: { repeat: Infinity, duration: 1.8, ease: "easeInOut" },
                 }}
-                className="mt-6 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold text-white backdrop-blur-md shadow-lg transition-all"
+                className="mt-6 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-500/10 hover:bg-amber-500/20 border border-amber-400/25 text-xs font-bold text-amber-300 backdrop-blur-md shadow-lg transition-all"
               >
-                <MousePointerClick className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+                <MousePointerClick className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
                 <span>Tap anywhere to enter</span>
-                <ArrowRight className="w-3 h-3 text-zinc-300" />
+                <ArrowRight className="w-3 h-3 text-amber-400" />
               </motion.div>
             </div>
           </motion.div>

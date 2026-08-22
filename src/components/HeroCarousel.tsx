@@ -79,7 +79,7 @@ export function HeroCarousel() {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 6000);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
@@ -108,7 +108,7 @@ export function HeroCarousel() {
             initial={{ opacity: 0, scale: 1.08 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.02 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="absolute inset-0 w-full h-full"
           >
             <Image
@@ -134,10 +134,10 @@ export function HeroCarousel() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={`content-${currentSlide.id}`}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
                 className="space-y-4"
               >
                 {/* Badge */}
