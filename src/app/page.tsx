@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   FEATURED_PRODUCTS,
-  CATEGORIES,
   STORE_INFO,
   Product,
   ProductCategory,
@@ -13,6 +12,7 @@ import {
 import { ProductCard } from "@/components/ProductCard";
 import { ProductModal } from "@/components/ProductModal";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import { CategoryMarquee } from "@/components/CategoryMarquee";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,10 +21,8 @@ import {
   ShieldCheck,
   Truck,
   RotateCcw,
-  Sparkles,
   Clock,
   ExternalLink,
-  ChevronRight,
   ShoppingBag,
 } from "lucide-react";
 import { FacebookIcon } from "@/components/FacebookIcon";
@@ -44,46 +42,46 @@ export default function Home() {
       <HeroCarousel />
 
       {/* 2. VALUE PROPOSITIONS BAR */}
-      <section className="border-b border-border bg-muted/30 py-8">
+      <section className="border-b border-border bg-zinc-950/5 py-7">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/60">
-              <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                <ShieldCheck className="w-6 h-6" />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+            <div className="flex items-center gap-3 p-3.5 rounded-xl bg-card border border-border/60">
+              <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-500 flex-shrink-0">
+                <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-sm">Original Export Quality</h4>
-                <p className="text-xs text-muted-foreground">Certified fabric & finish</p>
+                <h4 className="font-bold text-sm">100% Original</h4>
+                <p className="text-xs text-muted-foreground">Certified quality</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/60">
-              <div className="p-3 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-                <Truck className="w-6 h-6" />
+            <div className="flex items-center gap-3 p-3.5 rounded-xl bg-card border border-border/60">
+              <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-500 flex-shrink-0">
+                <Truck className="w-5 h-5" />
               </div>
               <div>
                 <h4 className="font-bold text-sm">Cash on Delivery</h4>
-                <p className="text-xs text-muted-foreground">Inside & outside Chattogram</p>
+                <p className="text-xs text-muted-foreground">All over Bangladesh</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/60">
-              <div className="p-3 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400">
-                <MapPin className="w-6 h-6" />
+            <div className="flex items-center gap-3 p-3.5 rounded-xl bg-card border border-border/60">
+              <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-500 flex-shrink-0">
+                <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-sm">Physical Showroom</h4>
-                <p className="text-xs text-muted-foreground">Yunusco City Centre, GEC</p>
+                <h4 className="font-bold text-sm">Live Showroom</h4>
+                <p className="text-xs text-muted-foreground">Yunusco, GEC Circle</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/60">
-              <div className="p-3 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400">
-                <RotateCcw className="w-6 h-6" />
+            <div className="flex items-center gap-3 p-3.5 rounded-xl bg-card border border-border/60">
+              <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-500 flex-shrink-0">
+                <RotateCcw className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-sm">Hassle-Free Exchange</h4>
-                <p className="text-xs text-muted-foreground">Instant size replacement</p>
+                <h4 className="font-bold text-sm">Easy Exchange</h4>
+                <p className="text-xs text-muted-foreground">Wrong size? No issue</p>
               </div>
             </div>
           </div>
@@ -91,43 +89,43 @@ export default function Home() {
       </section>
 
       {/* 3. SHOWROOM SPOTLIGHT BANNER */}
-      <section className="py-12 bg-background border-b border-border">
+      <section className="py-10 bg-background border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="relative rounded-3xl overflow-hidden bg-zinc-950 text-white border border-zinc-800 shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-6 p-8 md:p-12 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
-                  <MapPin className="w-3.5 h-3.5" />
-                  <span>Showroom Highlight</span>
+          <div className="relative rounded-2xl overflow-hidden bg-zinc-950 text-white border border-zinc-800 shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+              <div className="lg:col-span-6 p-7 md:p-10 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 text-amber-400 text-xs font-bold uppercase tracking-wider border border-amber-500/25">
+                  <MapPin className="w-3 h-3" />
+                  <span>Live Showroom</span>
                 </div>
 
-                <h3 className="text-3xl md:text-4xl font-black tracking-tight leading-tight">
-                  MS PARK • Yunusco City Centre
+                <h3 className="text-2xl md:text-3xl font-black tracking-tight leading-tight">
+                  MS PARK <span className="text-amber-400">•</span> Yunusco City Centre
                 </h3>
 
-                <p className="text-zinc-300 text-sm md:text-base leading-relaxed">
-                  Located at Shop 335, 3rd Floor, Yunusco City Centre (GEC Circle, Chittagong). Step into a realm of premium denim, formal elegance, and everyday casual wear.
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Shop 335, 3rd Floor, GEC Circle, Chattogram. Open daily 10 AM – 10 PM.
                 </p>
 
-                <div className="flex flex-wrap gap-4 pt-2">
+                <div className="flex flex-wrap gap-3 pt-1">
                   <a
                     href="#showroom"
-                    className="inline-flex items-center gap-2 font-bold px-6 h-11 bg-white text-zinc-950 hover:bg-zinc-200 rounded-full text-sm transition-all"
+                    className="inline-flex items-center gap-2 font-bold px-5 h-10 bg-gradient-to-r from-yellow-400 to-amber-500 text-zinc-950 hover:from-yellow-300 hover:to-amber-400 rounded-full text-sm transition-all shadow-md shadow-amber-500/20"
                   >
-                    View Showroom Details <ArrowRight className="w-4 h-4" />
+                    Showroom Details <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                   <Link
-                    href={`https://wa.me/${STORE_INFO.whatsappRaw}?text=${encodeURIComponent("Hello MS PARK! I would like to inquire about products.")}`}
+                    href={`https://wa.me/${STORE_INFO.whatsappRaw}?text=${encodeURIComponent("Hello MS PARK! I'd like to inquire about products.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-semibold px-6 h-11 border border-white/30 text-white hover:bg-white/10 rounded-full text-sm transition-all"
+                    className="inline-flex items-center gap-2 font-semibold px-5 h-10 border border-white/20 text-zinc-300 hover:bg-white/10 rounded-full text-sm transition-all"
                   >
-                    WhatsApp Helpline
+                    WhatsApp Us
                   </Link>
                 </div>
               </div>
 
-              <div className="lg:col-span-6 relative min-h-[300px] lg:min-h-[420px] w-full">
+              <div className="lg:col-span-6 relative min-h-[220px] lg:min-h-[360px] w-full">
                 <Image
                   src="/ms-shop.jpg"
                   alt="MS Park Showroom Interior"
@@ -141,52 +139,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. CATEGORIES HIGHLIGHT */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-primary mb-1">
-                Curated Collections
-              </p>
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-                Shop By Category
-              </h2>
-            </div>
-            <p className="text-sm text-muted-foreground max-w-md">
-              From everyday office essentials to weekend streetwear, discover garments tailored to fit Bangladeshi men with perfection.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {CATEGORIES.map((cat) => (
-              <div
-                key={cat.name}
-                onClick={() => {
-                  setSelectedCategory(cat.name);
-                  document.getElementById("collection")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="group relative aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer border border-border/80 shadow-sm hover:shadow-xl transition-all duration-300"
-              >
-                <Image
-                  src={cat.image}
-                  alt={cat.name}
-                  fill
-                  className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <span className="text-xs font-semibold text-zinc-300">{cat.count}+ Items</span>
-                  <h3 className="text-xl font-black uppercase tracking-tight flex items-center justify-between">
-                    {cat.name}
-                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 4. CATEGORIES HIGHLIGHT — Infinite Marquee */}
+      <CategoryMarquee
+        onSelect={(cat) => {
+          setSelectedCategory(cat);
+          document.getElementById("collection")?.scrollIntoView({ behavior: "smooth" });
+        }}
+      />
 
       {/* 5. MAIN PRODUCT SHOWCASE & FILTER TABS */}
       <section id="collection" className="py-16 bg-muted/20 border-y border-border">
@@ -194,11 +153,11 @@ export default function Home() {
           {/* Header & Filter Controls */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-black tracking-tight">
                 Featured Apparel
               </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 sm:mt-1">
-                Hand-picked bestsellers & new arrivals in stock at MS Park Chattogram
+              <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+                Bestsellers & new arrivals • MS Park Chattogram
               </p>
             </div>
 
@@ -208,9 +167,9 @@ export default function Home() {
                 <button
                   key={tab}
                   onClick={() => setSelectedCategory(tab)}
-                  className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 ${
+                  className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 ${
                     selectedCategory === tab
-                      ? "bg-foreground text-background shadow-xs"
+                      ? "bg-amber-500 text-zinc-950 shadow-xs"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`}
                 >
@@ -234,32 +193,32 @@ export default function Home() {
       </section>
 
       {/* 6. FACEBOOK CONNECT BANNER */}
-      <section className="py-14 bg-gradient-to-r from-blue-900 via-indigo-950 to-zinc-950 text-white">
+      <section className="py-12 bg-zinc-950 text-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-md">
-            <div className="space-y-4 text-center lg:text-left max-w-xl">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 border border-white/10 rounded-2xl p-7 md:p-10">
+            <div className="space-y-3 text-center lg:text-left max-w-lg">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold">
                 <FacebookIcon className="w-3.5 h-3.5 fill-blue-300" />
-                <span>Official Facebook Community</span>
+                <span>Official Community</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-                Join 3,500+ MS Park Fans on Facebook
+              <h3 className="text-xl md:text-2xl font-extrabold tracking-tight">
+                Follow <span className="text-amber-400">MS Park</span> on Facebook
               </h3>
-              <p className="text-zinc-300 text-sm leading-relaxed">
-                Stay updated with our weekly live unboxing, stock drops, Eid special collections, and instant customer support on Messenger.
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Live drops, Eid specials, and instant Messenger support.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div>
               <Link
                 href={STORE_INFO.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 h-12 gap-2 shadow-lg shadow-blue-600/30 transition-all text-sm"
+                className="inline-flex items-center justify-center font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-full px-7 h-11 gap-2 shadow-lg shadow-blue-600/30 transition-all text-sm"
               >
-                <FacebookIcon className="w-5 h-5 fill-white" />
-                Visit facebook.com/msparkbd
-                <ExternalLink className="w-4 h-4 ml-1" />
+                <FacebookIcon className="w-4 h-4 fill-white" />
+                facebook.com/msparkbd
+                <ExternalLink className="w-3.5 h-3.5 ml-0.5" />
               </Link>
             </div>
           </div>
@@ -272,22 +231,22 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Info Card */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 text-amber-500 text-xs font-bold uppercase tracking-wider">
                 <MapPin className="w-3.5 h-3.5" />
-                <span>Chattogram Flagship Store</span>
+                <span>Chattogram Flagship</span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-foreground">
-                Visit Our Showroom at Yunusco City Centre
+              <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground">
+                Come Visit Our Showroom
               </h2>
 
-              <p className="text-muted-foreground leading-relaxed">
-                Experience fabric feel, test our custom denim washes, and try on our tailored shirt collection in person. Our sales associates are ready to guide you.
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Touch the fabric, try the fit, take it home. Our team at Yunusco City Centre is ready.
               </p>
 
               <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border">
-                  <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-card border border-border">
+                  <MapPin className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h5 className="font-bold text-sm text-foreground">Address</h5>
                     <p className="text-sm text-muted-foreground">{STORE_INFO.address}</p>
@@ -295,16 +254,16 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border">
-                  <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-card border border-border">
+                  <Clock className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h5 className="font-bold text-sm text-foreground">Visiting Hours</h5>
                     <p className="text-xs text-muted-foreground">{STORE_INFO.openingHours}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border">
-                  <Truck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-card border border-border">
+                  <Truck className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h5 className="font-bold text-sm text-foreground">Delivery Rates</h5>
                     <p className="text-xs text-muted-foreground">{STORE_INFO.deliveryInfo}</p>
@@ -317,9 +276,9 @@ export default function Home() {
                   href={STORE_INFO.facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center font-bold gap-2 rounded-full px-8 h-11 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm shadow-md"
+                  className="inline-flex items-center justify-center font-bold gap-2 rounded-full px-7 h-10 bg-gradient-to-r from-yellow-400 to-amber-500 text-zinc-950 hover:from-yellow-300 hover:to-amber-400 transition-all text-sm shadow-md shadow-amber-500/20"
                 >
-                  <MapPin className="w-4 h-4" /> Get Directions / Contact Us
+                  <MapPin className="w-4 h-4" /> Get Directions
                 </Link>
               </div>
             </div>
@@ -378,7 +337,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
-                One and only unique menswear brand in Chattogram offering original ready-made garment collections.
+                Chattogram's premium menswear — original garments, honest prices.
               </p>
               <div className="flex items-center gap-3 pt-2">
                 <Link

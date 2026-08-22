@@ -33,13 +33,12 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: 1,
     image: "/ms-cover.jpg",
-    badge: "Chattogram Exclusive Showroom",
-    title: "ELEVATE YOUR EVERYDAY",
-    accentText: "STYLE & FIT",
-    subtitle:
-      "Original export garments, handcrafted denim washes, tailored cotton shirts, and modern casuals directly from MS Park.",
+    badge: "Chattogram's #1 Menswear",
+    title: "DRESS SHARP.",
+    accentText: "LIVE BOLD.",
+    subtitle: "Export-quality denim, tailored shirts & premium casuals — direct from MS Park.",
     tagline: "Shop 335, 3rd Floor, Yunusco City Centre, GEC Circle",
-    ctaText: "Shop Collection",
+    ctaText: "Shop Now",
     ctaLink: "#collection",
     secondaryCtaText: "Visit Showroom",
     secondaryCtaLink: "#showroom",
@@ -47,30 +46,28 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: 2,
     image: "/ms-shop.jpg",
-    badge: "Yunusco City Centre (GEC Circle)",
-    title: "EXPERIENCE THE SHOWROOM",
-    accentText: "IN PERSON",
-    subtitle:
-      "Walk into our flagship store in Chittagong to experience authentic fabrics, precise stitching, and personalized sizing.",
-    tagline: "Daily 10:00 AM - 10:00 PM • Fast Cash on Delivery Nationwide",
-    ctaText: "Explore Jeans & Chinos",
+    badge: "Yunusco City Centre, GEC",
+    title: "FEEL THE",
+    accentText: "DIFFERENCE.",
+    subtitle: "Touch, try & own. Our Chattogram showroom awaits you — daily 10 AM to 10 PM.",
+    tagline: "Cash on Delivery • All Over Bangladesh",
+    ctaText: "Browse Collection",
     ctaLink: "#collection",
-    secondaryCtaText: "Get Showroom Location",
+    secondaryCtaText: "Get Directions",
     secondaryCtaLink: "#showroom",
   },
   {
     id: 3,
     image: "/ms-pro.jpg",
-    badge: "100% Original Menswear",
-    title: "SIGNATURE READY-MADE",
-    accentText: "COLLECTIONS",
-    subtitle:
-      "Crafted for longevity and comfort. Discover high-demand slim denim, Oxford weave shirts, and luxury pique polos.",
-    tagline: "Inside Ctg: 1-2 Days • Outside Ctg: 2-3 Days Delivery",
-    ctaText: "View Featured Drops",
-    ctaLink: "#collection",
-    secondaryCtaText: "Message on WhatsApp",
-    secondaryCtaLink: `https://wa.me/${STORE_INFO.whatsappRaw}`,
+    badge: "100% Original Garments",
+    title: "YOUR STYLE.",
+    accentText: "OUR CRAFT.",
+    subtitle: "Slim denim, Oxford shirts, luxury polos — crafted to last, priced to impress.",
+    tagline: "Ctg: 1-2 Days • Nationwide: 2-3 Days Delivery",
+    ctaText: "Order on WhatsApp",
+    ctaLink: `https://wa.me/${STORE_INFO.whatsappRaw}`,
+    secondaryCtaText: "See All Styles",
+    secondaryCtaLink: "#collection",
   },
 ];
 
@@ -150,21 +147,21 @@ export function HeroCarousel() {
                 </div>
 
                 {/* Main Heading */}
-                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-[1.08]">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-[1.05]">
                   {currentSlide.title}{" "}
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-200 to-emerald-400">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 drop-shadow-sm">
                     {currentSlide.accentText}
                   </span>
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-sm sm:text-base md:text-lg text-zinc-300 max-w-2xl font-normal leading-relaxed">
+                <p className="text-sm sm:text-base text-zinc-300 max-w-xl font-normal leading-relaxed">
                   {currentSlide.subtitle}
                 </p>
 
                 {/* Tagline / Showroom highlight */}
-                <div className="flex items-center gap-2 text-xs md:text-sm text-emerald-400 font-semibold pt-1">
-                  <MapPin className="w-4 h-4 flex-shrink-0" />
+                <div className="flex items-center gap-2 text-xs text-amber-400/90 font-semibold pt-1">
+                  <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>{currentSlide.tagline}</span>
                 </div>
 
@@ -172,7 +169,7 @@ export function HeroCarousel() {
                 <div className="flex flex-wrap items-center gap-4 pt-4">
                   <a
                     href={currentSlide.ctaLink}
-                    className="inline-flex items-center justify-center font-bold text-sm md:text-base px-8 h-12 bg-white text-zinc-950 hover:bg-zinc-200 transition-all rounded-full shadow-xl shadow-white/10 gap-2"
+                    className="inline-flex items-center justify-center font-black text-sm px-7 h-11 bg-gradient-to-r from-yellow-400 to-amber-500 text-zinc-950 hover:from-yellow-300 hover:to-amber-400 transition-all rounded-full shadow-lg shadow-amber-500/25 gap-2"
                   >
                     <ShoppingBag className="w-4 h-4" />
                     {currentSlide.ctaText}
@@ -184,14 +181,14 @@ export function HeroCarousel() {
                       href={currentSlide.secondaryCtaLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center font-semibold text-sm md:text-base px-6 h-12 border border-white/30 text-white hover:bg-white/10 transition-all rounded-full backdrop-blur-sm"
+                      className="inline-flex items-center justify-center font-semibold text-sm px-6 h-11 border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 transition-all rounded-full backdrop-blur-sm"
                     >
                       {currentSlide.secondaryCtaText}
                     </Link>
                   ) : (
                     <a
                       href={currentSlide.secondaryCtaLink}
-                      className="inline-flex items-center justify-center font-semibold text-sm md:text-base px-6 h-12 border border-white/30 text-white hover:bg-white/10 transition-all rounded-full backdrop-blur-sm"
+                      className="inline-flex items-center justify-center font-semibold text-sm px-6 h-11 border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 transition-all rounded-full backdrop-blur-sm"
                     >
                       {currentSlide.secondaryCtaText}
                     </a>
@@ -222,7 +219,7 @@ export function HeroCarousel() {
                     onClick={() => setCurrentIndex(idx)}
                     className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition-all ${
                       currentIndex === idx
-                        ? "border-emerald-400 scale-105 shadow-md"
+                        ? "border-amber-400 scale-105 shadow-md shadow-amber-400/20"
                         : "border-transparent opacity-50 hover:opacity-100"
                     }`}
                   >

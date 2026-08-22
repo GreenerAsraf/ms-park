@@ -38,9 +38,9 @@ export function Navbar() {
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse shadow-sm shadow-emerald-400" />
-            <span className="font-medium text-zinc-300">
+            {/* <span className="font-medium text-zinc-300">
               <strong className="text-white font-semibold">Showroom:</strong> Shop 335 (3rd Floor), Yunusco City Centre, GEC Circle, Ctg
-            </span>
+            </span> */}
           </div>
 
           <div className="flex items-center gap-4 text-zinc-400">
@@ -97,42 +97,42 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-xs font-semibold">
+            <nav className="hidden lg:flex items-center gap-1 p-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-sm font-semibold">
               <Link
                 href="#collection"
-                className="px-3.5 py-1.5 rounded-full hover:bg-white/15 hover:text-white text-zinc-300 transition-all"
+                className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white text-zinc-300 transition-all"
               >
                 All Collections
               </Link>
               <Link
                 href="#jeans"
-                className="px-3.5 py-1.5 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
+                className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
               >
                 Jeans
               </Link>
               <Link
                 href="#shirts"
-                className="px-3.5 py-1.5 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
+                className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
               >
                 Shirts
               </Link>
               <Link
                 href="#polo"
-                className="px-3.5 py-1.5 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
+                className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
               >
                 Polo Shirts
               </Link>
               <Link
                 href="#pants"
-                className="px-3.5 py-1.5 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
+                className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
               >
                 Pants & Chinos
               </Link>
               <Link
                 href="#showroom"
-                className="px-3.5 py-1.5 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 flex items-center gap-1 transition-all"
+                className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 flex items-center gap-1.5 transition-all"
               >
-                <MapPin className="w-3 h-3 text-emerald-400" />
+                <MapPin className="w-3.5 h-3.5 text-amber-400" />
                 <span>Showroom</span>
               </Link>
             </nav>
@@ -151,7 +151,7 @@ export function Navbar() {
               aria-label="WhatsApp Helpline"
             >
               <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
-              <span className="hidden md:inline">WhatsApp</span>
+              {/* <span className="hidden md:inline">WhatsApp</span> */}
             </Link>
 
             {/* Facebook Button (Desktop Only) */}
@@ -163,7 +163,7 @@ export function Navbar() {
               aria-label="Facebook Page"
             >
               <FacebookIcon className="w-3.5 h-3.5 fill-blue-400" />
-              <span className="hidden md:inline">Facebook</span>
+              {/* <span className="hidden md:inline">Facebook</span> */}
             </Link>
 
             {/* Shopping Bag Button with Badge */}
