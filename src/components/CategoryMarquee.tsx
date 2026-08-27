@@ -86,6 +86,7 @@ export function CategoryMarquee({ onSelect }: CategoryMarqueeProps) {
                 src={cat.image}
                 alt={cat.name}
                 fill
+                sizes="240px"
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
               />
 

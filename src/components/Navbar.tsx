@@ -105,16 +105,16 @@ export function Navbar() {
                 All Collections
               </Link>
               <Link
-                href="#jeans"
+                href="#collection"
                 className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
               >
-                Jeans
+                Bags
               </Link>
               <Link
-                href="#shirts"
+                href="#collection"
                 className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white text-zinc-400 transition-all"
               >
-                Shirts
+                Shirts & T-Shirts
               </Link>
               <Link
                 href="#polo"

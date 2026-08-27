@@ -13,6 +13,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { ProductModal } from "@/components/ProductModal";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { CategoryMarquee } from "@/components/CategoryMarquee";
+import { CollectionCollage } from "@/components/CollectionCollage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -151,23 +152,26 @@ export default function Home() {
         }}
       />
 
-      {/* 5. MAIN PRODUCT SHOWCASE & FILTER TABS */}
-      <section id="collection" className="py-16 bg-muted/20 border-y border-border">
+      {/* 5. NEW COLLECTION PICTURE COLLAGE SECTION */}
+      <CollectionCollage onQuickView={(p) => setActiveProduct(p)} />
+
+      {/* 6. ALL PRODUCTS CATALOG SHOWCASE & FILTER TABS */}
+      <section id="catalog" className="py-16 bg-muted/20 border-y border-border">
         <div className="container mx-auto px-4 md:px-6">
           {/* Header & Filter Controls */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
             <div>
               <h2 className="text-2xl sm:text-3xl font-black tracking-tight">
-                Featured Apparel
+                All Products Catalog
               </h2>
               <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-                Bestsellers & new arrivals • MS Park Chattogram
+                Full collection & bestsellers • MS Park Chattogram
               </p>
             </div>
 
             {/* Filter Pills with Horizontal Scroll on Mobile */}
             <div className="flex items-center gap-1.5 p-1 rounded-full bg-card border border-border overflow-x-auto no-scrollbar max-w-full">
-              {(["All", "Jeans", "Shirts", "Polo Shirts", "Pants"] as ProductCategory[]).map((tab) => (
+              {(["All", "Bags", "Shirts", "T-Shirts", "Jeans", "Polo Shirts", "Pants"] as ProductCategory[]).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setSelectedCategory(tab)}
