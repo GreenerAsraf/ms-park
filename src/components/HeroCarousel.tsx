@@ -65,7 +65,9 @@ const HERO_SLIDES: HeroSlide[] = [
     subtitle: "Slim denim, Oxford shirts, luxury polos — crafted to last, priced to impress.",
     tagline: "Ctg: 1-2 Days • Nationwide: 2-3 Days Delivery",
     ctaText: "Order on WhatsApp",
-    ctaLink: `https://wa.me/${STORE_INFO.whatsappRaw}`,
+    ctaLink: `https://wa.me/${STORE_INFO.whatsappRaw}?text=${encodeURIComponent(
+      "✨ *Hello MS PARK!* ✨\nI am viewing your hero featured styles and would like to order directly."
+    )}`,
     secondaryCtaText: "See All Styles",
     secondaryCtaLink: "#collection",
   },

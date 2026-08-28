@@ -21,6 +21,7 @@ import {
   MessageCircle,
   ShieldCheck,
 } from "lucide-react";
+import { FacebookIcon } from "@/components/FacebookIcon";
 
 export function CartDrawer() {
   const { items, removeItem, updateQuantity, clearCart, isOpen, setIsOpen, totalCount, subtotal } =
@@ -41,14 +42,49 @@ export function CartDrawer() {
     const subtotalText = subtotal > 0 ? `💰 *Estimated Subtotal:* ৳${subtotal.toLocaleString()}\n` : "";
 
     const text = encodeURIComponent(
-      `Hello MS PARK! I would like to place an order from your website:\n\n` +
+      `✨ *MS PARK — Order Request* ✨\n\n` +
         `🛒 *ORDER SUMMARY:*\n${itemList}\n\n` +
         subtotalText +
-        `🚚 *Delivery Area:* Inside / Outside Chattogram\n\n` +
-        `👤 *My Details:*\nName:\nPhone:\nDelivery Address:\n`
+        `🚚 *Delivery Preferences:*\n` +
+        `• Area: Inside / Outside Chattogram\n\n` +
+        `👤 *Customer Information:*\n` +
+        `• Name:\n` +
+        `• Phone Number:\n` +
+        `• Delivery Address:\n\n` +
+        `Please confirm my order and stock availability. Thank you!`
     );
 
-    window.open(`https://wa.me/8801614354407?text=${text}`, "_blank");
+    window.location.href = `https://wa.me/${STORE_INFO.whatsappRaw}?text=${text}`;
+  };
+
+  const handleFacebookCheckout = () => {
+    if (items.length === 0) return;
+
+    const itemList = items
+      .map((item, idx) => {
+        const priceStr = item.product.price ? ` = ৳${item.product.price * item.quantity}` : "";
+        return `${idx + 1}. ${item.product.name} (Size: ${item.selectedSize}${
+          item.selectedColor ? `, Color: ${item.selectedColor}` : ""
+        }) x${item.quantity}${priceStr}`;
+      })
+      .join("\n");
+
+    const subtotalText = subtotal > 0 ? `💰 *Estimated Subtotal:* ৳${subtotal.toLocaleString()}\n` : "";
+
+    const text = encodeURIComponent(
+      `✨ *MS PARK — Order Request via Facebook* ✨\n\n` +
+        `🛒 *ORDER SUMMARY:*\n${itemList}\n\n` +
+        subtotalText +
+        `🚚 *Delivery Preferences:*\n` +
+        `• Area: Inside / Outside Chattogram\n\n` +
+        `👤 *Customer Information:*\n` +
+        `• Name:\n` +
+        `• Phone Number:\n` +
+        `• Delivery Address:\n\n` +
+        `Please confirm my order and stock availability. Thank you!`
+    );
+
+    window.location.href = `https://m.me/${STORE_INFO.messengerRaw || "msparkbd"}?text=${text}`;
   };
 
   return (
@@ -197,15 +233,13 @@ export function CartDrawer() {
                 <MessageCircle className="w-4 h-4 fill-zinc-950" />
                 Order via WhatsApp Checkout
               </Button>
-              <Link
-                href={STORE_INFO.facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2 font-semibold h-10 px-4 rounded-lg border border-border bg-background hover:bg-muted transition-all text-sm"
+              <button
+                onClick={handleFacebookCheckout}
+                className="w-full inline-flex items-center justify-center gap-2 font-semibold h-10 px-4 rounded-lg border border-border bg-background hover:bg-muted transition-all text-sm text-foreground"
               >
+                <FacebookIcon className="w-4 h-4 fill-blue-500" />
                 Message on Facebook Page <ArrowRight className="w-4 h-4" />
-              </Link>
+              </button>
             </div>
 
             <div className="flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">

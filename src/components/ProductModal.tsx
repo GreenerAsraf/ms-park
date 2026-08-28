@@ -45,16 +45,22 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
   };
 
   const handleWhatsAppOrder = () => {
-    const priceText = product.price ? `\n- Price: ৳${product.price * quantity}` : "";
+    const priceText = product.price ? `\n• Price: ৳${product.price * quantity}` : "";
     const text = encodeURIComponent(
-      `Hello MS PARK! I would like to order:
-- Item: ${product.name} (Code: ${product.id})
-- Size: ${selectedSize}
-- Color: ${selectedColor || "Standard"}
-- Qty: ${quantity}${priceText}
-Delivery address / inquiry:`
+      `✨ *MS PARK — Product Inquiry & Order* ✨\n\n` +
+      `📦 *Product Details:*\n` +
+      `• Item: ${product.name}\n` +
+      `• Code: ${product.id}\n` +
+      `• Size: ${selectedSize}\n` +
+      `• Color: ${selectedColor || "Standard"}\n` +
+      `• Quantity: ${quantity}${priceText}\n\n` +
+      `👤 *Customer Information:*\n` +
+      `• Name:\n` +
+      `• Phone Number:\n` +
+      `• Delivery Address:\n\n` +
+      `Please let me know if this item is in stock and ready for delivery. Thank you!`
     );
-    window.open(`https://wa.me/${STORE_INFO.whatsappRaw}?text=${text}`, "_blank");
+    window.location.href = `https://wa.me/${STORE_INFO.whatsappRaw}?text=${text}`;
   };
 
   return (
