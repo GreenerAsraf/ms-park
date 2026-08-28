@@ -214,6 +214,8 @@ export function CollectionCollage({ onQuickView }: CollectionCollageProps) {
             href={`https://wa.me/${STORE_INFO.whatsappRaw}?text=${encodeURIComponent(
               "✨ *Hello MS PARK!* ✨\nI am interested in your new collection arrivals and would like to check availability."
             )}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs sm:text-sm transition-all shadow-lg shadow-emerald-500/20 flex-shrink-0"
           >
             <span>Inquire on WhatsApp</span>

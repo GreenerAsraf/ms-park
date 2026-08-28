@@ -60,7 +60,8 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
       `• Delivery Address:\n\n` +
       `Please let me know if this item is in stock and ready for delivery. Thank you!`
     );
-    window.location.href = `https://wa.me/${STORE_INFO.whatsappRaw}?text=${text}`;
+    const whatsappNumber = STORE_INFO.whatsappRaw || "8801815340090";
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
   };
 
   return (

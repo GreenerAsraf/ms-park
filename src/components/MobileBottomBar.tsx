@@ -106,6 +106,8 @@ export function MobileBottomBar() {
           href={`https://wa.me/${STORE_INFO.whatsappRaw}?text=${encodeURIComponent(
             "✨ *Hello MS PARK!* ✨\nI am browsing your collection from mobile and would like to order or ask a question."
           )}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex flex-col items-center justify-center py-1 px-3 rounded-xl text-emerald-400 hover:text-emerald-300 transition-all active:scale-95"
         >
           <WhatsAppIcon className="w-4 h-4 text-emerald-400" />

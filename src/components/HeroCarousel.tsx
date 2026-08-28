@@ -171,14 +171,27 @@ export function HeroCarousel() {
 
                 {/* CTAs */}
                 <div className="flex flex-wrap items-center gap-4 pt-4">
-                  <a
-                    href={currentSlide.ctaLink}
-                    className="inline-flex items-center justify-center font-black text-sm px-7 h-11 bg-gradient-to-r from-yellow-400 to-amber-500 text-zinc-950 hover:from-yellow-300 hover:to-amber-400 transition-all rounded-full shadow-lg shadow-amber-500/25 gap-2"
-                  >
-                    <ShoppingBag className="w-4 h-4" />
-                    {currentSlide.ctaText}
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+                  {currentSlide.ctaLink.startsWith("http") ? (
+                    <a
+                      href={currentSlide.ctaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center font-black text-sm px-7 h-11 bg-gradient-to-r from-yellow-400 to-amber-500 text-zinc-950 hover:from-yellow-300 hover:to-amber-400 transition-all rounded-full shadow-lg shadow-amber-500/25 gap-2"
+                    >
+                      <ShoppingBag className="w-4 h-4" />
+                      {currentSlide.ctaText}
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  ) : (
+                    <a
+                      href={currentSlide.ctaLink}
+                      className="inline-flex items-center justify-center font-black text-sm px-7 h-11 bg-gradient-to-r from-yellow-400 to-amber-500 text-zinc-950 hover:from-yellow-300 hover:to-amber-400 transition-all rounded-full shadow-lg shadow-amber-500/25 gap-2"
+                    >
+                      <ShoppingBag className="w-4 h-4" />
+                      {currentSlide.ctaText}
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  )}
 
                   {currentSlide.secondaryCtaLink.startsWith("http") ? (
                     <Link

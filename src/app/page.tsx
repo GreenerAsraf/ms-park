@@ -119,6 +119,8 @@ export default function Home() {
                     href={`https://wa.me/${STORE_INFO.whatsappRaw}?text=${encodeURIComponent(
                       "✨ *Hello MS PARK!* ✨\nI would like to get showroom directions or inquire about in-store product stock."
                     )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 font-semibold px-5 h-10 border border-white/20 text-zinc-300 hover:bg-white/10 rounded-full text-sm transition-all"
                   >
                     WhatsApp Us
@@ -222,6 +224,8 @@ export default function Home() {
                 href={`https://m.me/${STORE_INFO.messengerRaw}?text=${encodeURIComponent(
                   "✨ *Hello MS PARK!* ✨\nI am contacting your Facebook team to inquire about your new collections and offers."
                 )}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-full px-7 h-11 gap-2 shadow-lg shadow-blue-600/30 transition-all text-sm"
               >
                 <FacebookIcon className="w-4 h-4 fill-white" />
@@ -413,7 +417,17 @@ export default function Home() {
               <ul className="space-y-2 text-sm text-zinc-400">
                 <li>
                   <Link
-                    href={STORE_INFO.facebookUrl}
+                    href={`https://wa.me/${STORE_INFO.whatsappRaw}?text=${encodeURIComponent("✨ *Hello MS PARK!* ✨\nI would like to contact customer care.")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-emerald-400 transition-colors text-zinc-300 font-medium"
+                  >
+                    WhatsApp: {STORE_INFO.whatsapp}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={`https://m.me/${STORE_INFO.messengerRaw}?text=${encodeURIComponent("✨ *Hello MS PARK!* ✨\nI need customer support.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"

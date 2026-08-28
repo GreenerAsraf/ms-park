@@ -54,7 +54,8 @@ export function CartDrawer() {
         `Please confirm my order and stock availability. Thank you!`
     );
 
-    window.location.href = `https://wa.me/${STORE_INFO.whatsappRaw}?text=${text}`;
+    const whatsappNumber = STORE_INFO.whatsappRaw || "8801815340090";
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
   };
 
   const handleFacebookCheckout = () => {
@@ -84,7 +85,7 @@ export function CartDrawer() {
         `Please confirm my order and stock availability. Thank you!`
     );
 
-    window.location.href = `https://m.me/${STORE_INFO.messengerRaw || "msparkbd"}?text=${text}`;
+    window.open(`https://m.me/${STORE_INFO.messengerRaw || "msparkbd"}?text=${text}`, "_blank");
   };
 
   return (

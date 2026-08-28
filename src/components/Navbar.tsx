@@ -146,11 +146,12 @@ export function Navbar() {
               href={`https://wa.me/${STORE_INFO.whatsappRaw}?text=${encodeURIComponent(
                 "✨ *Hello MS PARK!* ✨\nI am exploring your website and would like to know more about your premium menswear collection."
               )}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1 px-2.5 sm:px-3 h-8 sm:h-9 rounded-full bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 text-xs font-bold transition-all active:scale-95 shadow-sm"
               aria-label="WhatsApp Helpline"
             >
               <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
-              {/* <span className="hidden md:inline">WhatsApp</span> */}
             </Link>
 
             {/* Facebook Button (Desktop Only) */}
@@ -158,6 +159,8 @@ export function Navbar() {
               href={`https://m.me/${STORE_INFO.messengerRaw}?text=${encodeURIComponent(
                 "✨ *Hello MS PARK!* ✨\nI am exploring your website and would like to inquire about your menswear collection."
               )}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-3 h-8 sm:h-9 rounded-full bg-blue-500/15 hover:bg-blue-500/25 text-blue-400 border border-blue-500/30 text-xs font-bold transition-all active:scale-95 shadow-sm"
               aria-label="Message on Facebook"
             >
@@ -290,6 +293,8 @@ export function Navbar() {
                       href={`https://wa.me/${STORE_INFO.whatsappRaw}?text=${encodeURIComponent(
                         "✨ *Hello MS PARK!* ✨\nI am contacting you to inquire about your menswear collection and availability."
                       )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold h-10 px-2 rounded-xl text-xs transition-colors shadow-sm"
                     >
                       <WhatsAppIcon className="w-4 h-4" />
@@ -300,6 +305,8 @@ export function Navbar() {
                       href={`https://m.me/${STORE_INFO.messengerRaw}?text=${encodeURIComponent(
                         "✨ *Hello MS PARK!* ✨\nI would like to message your Facebook page regarding your store and products."
                       )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold h-10 px-2 rounded-xl text-xs transition-colors shadow-sm"
                     >
                       <FacebookIcon className="w-4 h-4" />
