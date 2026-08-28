@@ -45,13 +45,13 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
   };
 
   const handleWhatsAppOrder = () => {
+    const priceText = product.price ? `\n- Price: ৳${product.price * quantity}` : "";
     const text = encodeURIComponent(
       `Hello MS PARK! I would like to order:
 - Item: ${product.name} (Code: ${product.id})
 - Size: ${selectedSize}
 - Color: ${selectedColor || "Standard"}
-- Qty: ${quantity}
-- Price: ৳${product.price * quantity}
+- Qty: ${quantity}${priceText}
 Delivery address / inquiry:`
     );
     window.open(`https://wa.me/${STORE_INFO.whatsappRaw}?text=${text}`, "_blank");
@@ -75,6 +75,7 @@ Delivery address / inquiry:`
             src={product.image}
             alt={product.name}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
             priority
           />
@@ -126,21 +127,23 @@ Delivery address / inquiry:`
             </div>
 
             {/* Pricing */}
-            <div className="flex items-baseline gap-3">
-              <span className="text-3xl font-black tracking-tight text-foreground">
-                ৳{product.price.toLocaleString()}
-              </span>
-              {product.originalPrice && (
-                <span className="text-lg text-muted-foreground line-through decoration-zinc-400">
-                  ৳{product.originalPrice.toLocaleString()}
+            {product.price !== undefined && (
+              <div className="flex items-baseline gap-3">
+                <span className="text-3xl font-black tracking-tight text-foreground">
+                  ৳{product.price.toLocaleString()}
                 </span>
-              )}
-              {product.originalPrice && (
-                <Badge variant="secondary" className="text-xs text-emerald-600 font-bold bg-emerald-50 dark:bg-emerald-950/40">
-                  Save ৳{(product.originalPrice - product.price).toLocaleString()}
-                </Badge>
-              )}
-            </div>
+                {product.originalPrice && (
+                  <span className="text-lg text-muted-foreground line-through decoration-zinc-400">
+                    ৳{product.originalPrice.toLocaleString()}
+                  </span>
+                )}
+                {product.originalPrice && product.price && (
+                  <Badge variant="secondary" className="text-xs text-emerald-600 font-bold bg-emerald-50 dark:bg-emerald-950/40">
+                    Save ৳{(product.originalPrice - product.price).toLocaleString()}
+                  </Badge>
+                )}
+              </div>
+            )}
 
             <p className="text-sm text-muted-foreground leading-relaxed">
               {product.description}
@@ -245,7 +248,7 @@ Delivery address / inquiry:`
                 className="w-full gap-2 font-bold bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-zinc-950 shadow-lg shadow-amber-500/20"
               >
                 <ShoppingBag className="w-4 h-4" />
-                Add to Cart • ৳{(product.price * quantity).toLocaleString()}
+                Add to Cart{product.price ? ` • ৳${(product.price * quantity).toLocaleString()}` : ""}
               </Button>
               <Button
                 size="lg"

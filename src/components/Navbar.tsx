@@ -77,6 +77,7 @@ export function Navbar() {
                   src="/ms-pro.jpg"
                   alt="MS PARK Logo"
                   fill
+                  sizes="(max-width: 640px) 32px, 40px"
                   className="object-cover"
                   priority
                 />
@@ -206,6 +207,7 @@ export function Navbar() {
                           src="/ms-pro.jpg"
                           alt="MS PARK Logo"
                           fill
+                          sizes="36px"
                           className="object-cover"
                         />
                       </div>

@@ -229,6 +229,7 @@ export function HeroCarousel() {
                       src={slide.image}
                       alt={slide.title}
                       fill
+                      sizes="(max-width: 768px) 100px, 200px"
                       className="object-cover"
                     />
                   </button>

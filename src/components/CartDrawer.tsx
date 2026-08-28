@@ -30,18 +30,20 @@ export function CartDrawer() {
     if (items.length === 0) return;
 
     const itemList = items
-      .map(
-        (item, idx) =>
-          `${idx + 1}. ${item.product.name} (Size: ${item.selectedSize}${
-            item.selectedColor ? `, Color: ${item.selectedColor}` : ""
-          }) x${item.quantity} = ৳${item.product.price * item.quantity}`
-      )
+      .map((item, idx) => {
+        const priceStr = item.product.price ? ` = ৳${item.product.price * item.quantity}` : "";
+        return `${idx + 1}. ${item.product.name} (Size: ${item.selectedSize}${
+          item.selectedColor ? `, Color: ${item.selectedColor}` : ""
+        }) x${item.quantity}${priceStr}`;
+      })
       .join("\n");
+
+    const subtotalText = subtotal > 0 ? `💰 *Estimated Subtotal:* ৳${subtotal.toLocaleString()}\n` : "";
 
     const text = encodeURIComponent(
       `Hello MS PARK! I would like to place an order from your website:\n\n` +
         `🛒 *ORDER SUMMARY:*\n${itemList}\n\n` +
-        `💰 *Estimated Subtotal:* ৳${subtotal.toLocaleString()}\n` +
+        subtotalText +
         `🚚 *Delivery Area:* Inside / Outside Chattogram\n\n` +
         `👤 *My Details:*\nName:\nPhone:\nDelivery Address:\n`
     );
@@ -99,6 +101,7 @@ export function CartDrawer() {
                     src={item.product.image}
                     alt={item.product.name}
                     fill
+                    sizes="80px"
                     className="object-cover"
                   />
                 </div>
@@ -119,9 +122,11 @@ export function CartDrawer() {
 
                   <div className="flex items-center justify-between mt-2">
                     {/* Price */}
-                    <span className="font-bold text-sm">
-                      ৳{(item.product.price * item.quantity).toLocaleString()}
-                    </span>
+                    {item.product.price !== undefined ? (
+                      <span className="font-bold text-sm">
+                        ৳{(item.product.price * item.quantity).toLocaleString()}
+                      </span>
+                    ) : <span />}
 
                     {/* Quantity controls */}
                     <div className="flex items-center border border-border rounded-md bg-background">
@@ -163,20 +168,24 @@ export function CartDrawer() {
         {items.length > 0 && (
           <div className="p-6 border-t border-border bg-muted/20 space-y-4">
             <div className="space-y-2 text-sm">
-              <div className="flex justify-between text-muted-foreground">
-                <span>Subtotal</span>
-                <span className="font-semibold text-foreground">
-                  ৳{subtotal.toLocaleString()}
-                </span>
-              </div>
+              {subtotal > 0 && (
+                <div className="flex justify-between text-muted-foreground">
+                  <span>Subtotal</span>
+                  <span className="font-semibold text-foreground">
+                    ৳{subtotal.toLocaleString()}
+                  </span>
+                </div>
+              )}
               <div className="flex justify-between text-muted-foreground">
                 <span>Estimated Delivery</span>
                 <span className="text-xs">৳70 (Ctg) / ৳130 (All BD)</span>
               </div>
-              <div className="border-t border-border/80 pt-2 flex justify-between font-bold text-base text-foreground">
-                <span>Total Amount</span>
-                <span>৳{subtotal.toLocaleString()}</span>
-              </div>
+              {subtotal > 0 && (
+                <div className="border-t border-border/80 pt-2 flex justify-between font-bold text-base text-foreground">
+                  <span>Total Amount</span>
+                  <span>৳{subtotal.toLocaleString()}</span>
+                </div>
+              )}
             </div>
 
             <div className="space-y-2">

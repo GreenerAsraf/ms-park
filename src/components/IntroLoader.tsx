@@ -129,6 +129,7 @@ export function IntroLoader() {
                       src="/ms-pro.jpg"
                       alt="MS Park Emblem"
                       fill
+                      sizes="(max-width: 640px) 80px, 96px"
                       className="object-cover"
                       priority
                     />

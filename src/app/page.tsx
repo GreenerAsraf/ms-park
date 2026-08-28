@@ -339,6 +339,7 @@ export default function Home() {
                     src="/ms-pro.jpg"
                     alt="MS PARK Logo"
                     fill
+                    sizes="32px"
                     className="object-cover"
                   />
                 </div>

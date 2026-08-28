@@ -106,16 +106,18 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
 
         {/* Pricing & Quick Add Button */}
         <div className="flex items-center justify-between pt-2 mt-auto border-t border-border/50">
-          <div className="flex flex-col">
-            <span className="text-sm sm:text-base font-black text-foreground">
-              ৳{product.price.toLocaleString()}
-            </span>
-            {product.originalPrice && (
-              <span className="text-[10px] sm:text-xs text-muted-foreground line-through">
-                ৳{product.originalPrice.toLocaleString()}
+          {product.price !== undefined ? (
+            <div className="flex flex-col">
+              <span className="text-sm sm:text-base font-black text-foreground">
+                ৳{product.price.toLocaleString()}
               </span>
-            )}
-          </div>
+              {product.originalPrice && (
+                <span className="text-[10px] sm:text-xs text-muted-foreground line-through">
+                  ৳{product.originalPrice.toLocaleString()}
+                </span>
+              )}
+            </div>
+          ) : <div />}
 
           <Button
             size="sm"

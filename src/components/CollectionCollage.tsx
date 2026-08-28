@@ -90,7 +90,7 @@ export function CollectionCollage({ onQuickView }: CollectionCollageProps) {
                 spanClass = "lg:col-span-4 lg:row-span-1";
               }
 
-              const discountPercent = product.originalPrice
+              const discountPercent = (product.originalPrice && product.price)
                 ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
                 : null;
 
@@ -162,16 +162,18 @@ export function CollectionCollage({ onQuickView }: CollectionCollageProps) {
 
                     {/* Price & Action Buttons */}
                     <div className="flex items-center justify-between pt-2 border-t border-white/10">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-lg sm:text-xl font-extrabold text-amber-400">
-                          ৳{product.price.toLocaleString()}
-                        </span>
-                        {product.originalPrice && (
-                          <span className="text-xs sm:text-sm text-zinc-400 line-through">
-                            ৳{product.originalPrice.toLocaleString()}
+                      {product.price !== undefined ? (
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-lg sm:text-xl font-extrabold text-amber-400">
+                            ৳{product.price.toLocaleString()}
                           </span>
-                        )}
-                      </div>
+                          {product.originalPrice && (
+                            <span className="text-xs sm:text-sm text-zinc-400 line-through">
+                              ৳{product.originalPrice.toLocaleString()}
+                            </span>
+                          )}
+                        </div>
+                      ) : <div />}
 
                       {/* Interactive Triggers */}
                       <div className="flex items-center gap-2">

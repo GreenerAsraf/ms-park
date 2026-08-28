@@ -4,7 +4,7 @@ export type Product = {
   id: string;
   name: string;
   category: ProductCategory;
-  price: number;
+  price?: number;
   originalPrice?: number;
   image: string;
   description: string;
@@ -39,8 +39,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p-bag-1",
     name: "MS Park Signature Leather Travel Duffel",
     category: "Bags",
-    price: 3450,
-    originalPrice: 4200,
     image: "https://res.cloudinary.com/dwonhsf1i/image/upload/WhatsApp_Image_2026-08-25_at_3.39.39_PM.jpg",
     description: "Premium handcrafted leather duffel bag with heavy-duty brass hardware and spacious compartments.",
     sizes: ["One Size"],
@@ -55,8 +53,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p-bag-2",
     name: "Urban Utility Crossbody Messenger Bag",
     category: "Bags",
-    price: 2250,
-    originalPrice: 2800,
     image: "https://res.cloudinary.com/dwonhsf1i/image/upload/WhatsApp_Image_2026-08-25_at_3.39.38_PM.jpg",
     description: "Sleek tactical messenger bag designed for urban commuters, featuring quick-access tech pockets.",
     sizes: ["One Size"],
@@ -71,8 +67,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p-shirt-c1",
     name: "Premium Linen Patterned Casual Shirt",
     category: "Shirts",
-    price: 2250,
-    originalPrice: 2700,
     image: "https://res.cloudinary.com/dwonhsf1i/image/upload/WhatsApp_Image_2026-08-25_at_3.39.37_PM.jpg",
     description: "Breathable textured cotton linen shirt tailored for effortless smart casual style.",
     sizes: ["M", "L", "XL", "XXL"],
@@ -88,8 +82,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p-shirt-c2",
     name: "Executive Stripe Oxford Cotton Shirt",
     category: "Shirts",
-    price: 2150,
-    originalPrice: 2550,
     image: "https://res.cloudinary.com/dwonhsf1i/image/upload/v1787769171/WhatsApp_Image_2026-08-25_at_3.39.36_PM_1.jpg",
     description: "Classic high-density woven stripe shirt for formal and business casual events.",
     sizes: ["M", "L", "XL", "XXL"],
@@ -105,8 +97,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p-shirt-c3",
     name: "Minimalist Essential Crewneck T-Shirt",
     category: "T-Shirts",
-    price: 1250,
-    originalPrice: 1600,
     image: "https://res.cloudinary.com/dwonhsf1i/image/upload/v1787769168/WhatsApp_Image_2026-08-25_at_3.39.32_PM.jpg",
     description: "Heavyweight 220 GSM combed cotton t-shirt with soft-touch finishing and reinforced ribbed neckline.",
     sizes: ["M", "L", "XL", "XXL"],
@@ -122,8 +112,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p-shirt-c4",
     name: "Monochrome Resort Collar Shirt",
     category: "Shirts",
-    price: 2350,
-    originalPrice: 2850,
     image: "https://res.cloudinary.com/dwonhsf1i/image/upload/v1787769172/WhatsApp_Image_2026-08-25_at_3.39.38_PM_1.jpg",
     description: "Contemporary Cuban collar shirt featuring lightweight drape fabric and relaxed holiday vibes.",
     sizes: ["M", "L", "XL"],
@@ -139,8 +127,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p-shirt-c5",
     name: "Vintage Washed Oversized T-Shirt",
     category: "T-Shirts",
-    price: 1350,
-    originalPrice: 1750,
     image: "https://res.cloudinary.com/dwonhsf1i/image/upload/v1787769165/WhatsApp_Image_2026-08-25_at_3.39.21_PM.jpg",
     description: "Acid washed urban streetwear t-shirt crafted with premium heavy knit fabric.",
     sizes: ["M", "L", "XL", "XXL"],
@@ -156,9 +142,7 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p1",
     name: "Vintage Whisker Washed Slim Jeans",
     category: "Jeans",
-    price: 2450,
-    originalPrice: 2950,
-    image: "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80",
     description: "Premium stretch denim with artisanal whisker wash and durable reinforced copper stitching.",
     sizes: ["30", "32", "34", "36", "38"],
     colors: ["Deep Indigo", "Vintage Blue"],
@@ -173,8 +157,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p3",
     name: "Tailored Smart Casual Chino Pants",
     category: "Pants",
-    price: 1950,
-    originalPrice: 2350,
     image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=800&q=80",
     description: "Ultra-comfortable stretch twill chinos featuring a streamlined modern taper and stain-resistant finish.",
     sizes: ["30", "32", "34", "36"],
@@ -190,8 +172,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p4",
     name: "Midnight Black Super Slim Denim",
     category: "Jeans",
-    price: 2600,
-    originalPrice: 3100,
     image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80",
     description: "Deep reactive-dyed stay-black denim engineered to retain deep rich color through repeated washes.",
     sizes: ["30", "32", "34", "36", "38"],
@@ -207,8 +187,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     id: "p5",
     name: "Luxury Pique Structured Polo Shirt",
     category: "Polo Shirts",
-    price: 1450,
-    originalPrice: 1750,
     image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=800&q=80",
     description: "Double-mercerized Egyptian cotton polo shirt with contrast ribbed tipping collar and mother-of-pearl buttons.",
     sizes: ["M", "L", "XL", "XXL"],
@@ -241,7 +219,7 @@ export const CATEGORIES: { name: ProductCategory; count: number; image: string }
   {
     name: "Jeans",
     count: 14,
-    image: "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80",
   },
   {
     name: "Polo Shirts",
